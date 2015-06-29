@@ -34,3 +34,5 @@
 #Other Stuff (Compiled Files)
 bin/
 obj/
+prj/
+lib/
