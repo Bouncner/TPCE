@@ -150,12 +150,12 @@ void CDBLoader<T>::Connect()
                 m_szServer, m_szDatabase );
 
             rc = SQLDriverConnect(m_hdbc, NULL, (SQLCHAR*)szConnectStr, sizeof(szConnectStr),
-                (SQLCHAR*)szOutStr, sizeof(szOutStr), &iOutStrLen, SQL_DRIVER_NOPROMPT );
+                (SQLCHAR*)szOutStr, sizeof(szOutStr), &iOutStrLen, SQL_DRIVER_COMPLETE_REQUIRED );
         }
         else
         {
             rc = SQLDriverConnect(m_hdbc, NULL, (SQLCHAR*)m_szLoaderParams, sizeof(m_szLoaderParams),
-                (SQLCHAR*)szOutStr, sizeof(szOutStr), &iOutStrLen, SQL_DRIVER_NOPROMPT );
+                (SQLCHAR*)szOutStr, sizeof(szOutStr), &iOutStrLen, SQL_DRIVER_COMPLETE_REQUIRED );
         }
 
         if (rc != SQL_SUCCESS && rc != SQL_SUCCESS_WITH_INFO)
